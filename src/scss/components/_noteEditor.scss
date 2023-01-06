@@ -1,0 +1,146 @@
+.addnotewrapper {
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	width: min-content;
+	align-items: center;
+
+	margin-top: 10px;
+	* {
+		width: 300px;
+	}
+}
+.fakelabel {
+	color: black;
+	border: $fullborder;
+	border-radius: 5px;
+}
+.fakelabel.hide {
+	display: none;
+	border: none !important;
+}
+.addnote.hide {
+	display: none;
+}
+.inputnotetext.hide {
+	display: none;
+}
+.addbutton {
+	background-color: black;
+}
+.addnotelabel {
+	color: black;
+	border-top: $fullborder;
+	border-right: $fullborder;
+	border-bottom: 0px;
+	border-left: $fullborder;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	resize: none;
+}
+.addnotetext {
+	color: black;
+	border-top: 0px;
+	border-right: $fullborder;
+	border-bottom: $fullborder;
+	border-left: $fullborder;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	resize: none;
+}
+
+.closebutton {
+	background-color: transparent;
+	border: 0;
+	display: inline-flex;
+	margin-right: 0;
+	margin-left: auto;
+
+	margin-top: 0;
+	vertical-align: top;
+	margin-bottom: auto;
+
+	&:active {
+		transform: scale(1.3);
+	}
+}
+
+.notecontainer {
+	width: 100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+.noteblock {
+	width: 280px;
+	text-align: center;
+	margin-bottom: 65px;
+	transition: all 0.2s ease-in-out;
+	&:hover {
+		transform: scale(1.03);
+	}
+
+	&-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__image {
+		width: 260px;
+	}
+
+	&__title {
+		font-size: 20px;
+		font-weight: 900;
+		letter-spacing: 1%;
+		margin-bottom: 20px;
+	}
+	&__selector {
+		display: flex;
+		background-color: #f3f3f3;
+		border-radius: 10px;
+		flex-direction: column;
+		padding: 6px;
+
+		ul {
+			display: flex;
+			flex: 1;
+
+			&:first-of-type {
+				margin-bottom: 6px;
+			}
+
+			li {
+				padding: 8px;
+				flex: 1;
+				cursor: pointer;
+				font-weight: 600;
+				font-size: 14px;
+
+				&.active {
+					background: #ffffff;
+					box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+					border-radius: 5px;
+					cursor: auto;
+				}
+			}
+		}
+	}
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 20px;
+	}
+}
+.notewrapper {
+	min-width: fit-content;
+	max-width: fit-content;
+	width: fit-content;
+	height: fit-content;
+	background-color: transparent;
+	margin: 10px;
+	color: black;
+	border-radius: 3px;
+}
