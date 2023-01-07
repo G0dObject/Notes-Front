@@ -7,7 +7,6 @@ import AddNote from "../Note/AddNote";
 function IndexAuthorize() {
 	return (
 		<>
-			<AddNote></AddNote>
 			<NoteContainer></NoteContainer>
 		</>
 	);

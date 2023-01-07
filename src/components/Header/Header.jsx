@@ -55,7 +55,7 @@ function Header() {
 			</MDBNavbar>
 			<Collapse in={ShowNavExternal} dimension="width">
 				<div id="navbarToggleExternalContent" style={{ display: "flex-box" }}>
-					<Card>Example</Card>
+					<Card>In develop</Card>
 				</div>
 			</Collapse>
 		</>

@@ -20,7 +20,6 @@ import { Link } from "react-router-dom";
 
 function LoginTest({ isLogin }) {
 	const [justifyActive, setJustifyActive] = useState(isLogin ? "tab1" : "tab2");
-	console.log(isLogin);
 	const handleJustifyClick = (value) => {
 		if (value === justifyActive) {
 			return;
@@ -69,7 +68,6 @@ function LoginTest({ isLogin }) {
 					<MDBInput
 						wrapperClass="mb-4"
 						label="Email address"
-						defaultValue={"Aboba@gmail.com"}
 						id="form1"
 						required
 						maxLength="80"
@@ -80,7 +78,6 @@ function LoginTest({ isLogin }) {
 						wrapperClass="mb-4 "
 						label="Password"
 						id="form2"
-						defaultValue={"Aboba1"}
 						required
 						type="password"
 						inputRef={lpassword}
@@ -99,7 +96,6 @@ function LoginTest({ isLogin }) {
 					<MDBBtn
 						className="mb-4 w-100 bg-dark "
 						onClick={() => {
-							console.log(lemail.current.value);
 							store.login(lemail.current.value, lpassword.current.value);
 						}}
 					>

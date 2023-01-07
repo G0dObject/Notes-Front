@@ -1,38 +1,58 @@
-import { MDBInput } from "mdb-react-ui-kit";
-import { useState, useRef, useEffect, useFocus } from "react";
+import { useState, useRef, useEffect } from "react";
 import ReactTextareaAutosize from "react-textarea-autosize";
+import NoteService from "../../services/NoteService";
+import useOnClickOutside from "use-onclickoutside";
 
-function AddNote() {
+function AddNote({ stateChanger }) {
 	const [isEditing, setEditing] = useState(false);
-	const [visible, SetVisible] = useState(false);
-	const textInput = useRef(null);
+
+	const titleref = useRef("");
+	const textref = useRef("");
+
+	const ref = useRef();
+	useOnClickOutside(ref, () => {
+		if (isEditing) {
+			SendNote();
+			titleref.current.value = "";
+			textref.current.value = "";
+			toggleEditing();
+		}
+	});
 
 	const toggleEditing = () => {
-		SetVisible(!visible);
 		setEditing(!isEditing);
 	};
 
+	function SendNote() {
+		NoteService.post(titleref.current.value, textref.current.value).then(() =>
+			stateChanger()
+		);
+	}
 	useEffect(() => {
 		if (isEditing) {
-			textInput.current.focus();
+			textref.current.focus();
 		}
 	}, [isEditing]);
 
 	return (
 		<>
-			<div className="addnotewrapper">
+			<div className="addnotewrapper" ref={ref}>
 				<input
-					className={!visible ? "fakelabel show" : "fakelabel hide"}
+					className={!isEditing ? "fakelabel show" : "fakelabel hide"}
 					onClick={toggleEditing}
 					placeholder="Write note"
 				></input>
 
-				<div className={visible ? "addnote show" : "addnote hide"}>
-					<input placeholder="Write label" className="addnotelabel"></input>
+				<div className={isEditing ? "addnote show" : "addnote hide"}>
+					<input
+						ref={titleref}
+						placeholder="Write label"
+						className="addnotelabel"
+					></input>
 					<ReactTextareaAutosize
 						placeholder="Write note"
 						className="addnotetext"
-						ref={textInput}
+						ref={textref}
 						maxRows={6}
 					></ReactTextareaAutosize>
 				</div>

@@ -1,8 +1,8 @@
 import NoteService from "../../services/NoteService";
+import ReactTextareaAutosize from "react-textarea-autosize";
+import { MDBBtn } from "mdb-react-ui-kit";
 
 function NoteWrapper({ title, text, noteid, stateChanger }) {
-	console.log(stateChanger);
-
 	return (
 		<>
 			<div className="notewrapper">
@@ -15,8 +15,12 @@ function NoteWrapper({ title, text, noteid, stateChanger }) {
 					✖
 				</button>
 				<div className="noteblock">
-					<h4 className="noteblock__title">{title}</h4>
-					<div className="noteblock__text">{text}</div>
+					<ReactTextareaAutosize className="noteblock__title" readOnly={true}>
+						{title}
+					</ReactTextareaAutosize>
+					<ReactTextareaAutosize className="noteblock__text" readOnly={true}>
+						{text}
+					</ReactTextareaAutosize>
 				</div>
 			</div>
 		</>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import NoteService from "../../services/NoteService";
+import AddNote from "./AddNote";
 import NoteWrapper from "./NoteWrapper";
 
 function NoteContainer() {
@@ -15,6 +16,7 @@ function NoteContainer() {
 
 	return (
 		<>
+			<AddNote stateChanger={GetData}></AddNote>
 			<div className="notecontainer">
 				{notes.map((item) => (
 					<NoteWrapper
