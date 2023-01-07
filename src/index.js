@@ -13,6 +13,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 export const store = new Store();
 export const Context = createContext(store);
 
+console.log(process.env.REACT_APP_BASE_API_URL);
+
 root.render(
 	<BrowserRouter>
 		<Context.Provider value={store}>
