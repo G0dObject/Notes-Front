@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import React, { createContext } from "react";
 import style from "./scss/app.scss";
 import Store from "./store/store";
-import { data } from "autoprefixer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

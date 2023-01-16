@@ -1,5 +1,4 @@
 import { store } from "..";
-import Header from "../components/Header/Header";
 import IndexAuthorize from "../components/Index/IndexAuthorize";
 import IndexUnAuthorize from "../components/Index/IndexUnAuthorize";
 function IndexPage() {

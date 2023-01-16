@@ -11,9 +11,7 @@ import {
 import HeaderUserSide from "./HeaderUserSide";
 import Card from "react-bootstrap/Card";
 import Collapse from "react-bootstrap/Collapse";
-import { store } from "../..";
 import { useNavigate } from "react-router-dom";
-import { Button } from "bootstrap";
 
 function Header() {
 	const navigate = useNavigate();
@@ -21,7 +19,7 @@ function Header() {
 
 	return (
 		<>
-			<MDBNavbar dark bgColor="dark">
+			<MDBNavbar dark id="header__navbar">
 				<MDBContainer fluid>
 					<MDBNavbarToggler
 						type="button"

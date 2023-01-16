@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { MDBBtn } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 import { store } from "../..";
-import { render } from "react-dom";
-import { Navigate } from "react-router-dom";
-
 function HeaderUserSide() {
 	if (store.isAuth) return User();
 	else return Guest();

@@ -1,0 +1,45 @@
+.noteblock {
+	color: $fontcolor;
+	width: 200px;
+	text-align: center;
+
+	transition: all 0.2s ease-in-out;
+
+	&-wrapper {
+		display: flex;
+		justify-content: center;
+	}
+
+	&__image {
+		width: 260px;
+	}
+
+	&__title {
+		color: $fontcolor;
+		background-color: transparent;
+		font-weight: 900;
+		letter-spacing: 1%;
+		margin-bottom: 0px;
+		font-size: 1.2rem;
+		height: min-content;
+		width: 200px;
+		text-align: center;
+		resize: none;
+		border: none;
+	}
+	&__text {
+		color: $fontcolor;
+		background-color: transparent;
+		font-size: 1.125rem;
+		resize: none;
+		border: none;
+		text-align: center;
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-top: 20px;
+	}
+}

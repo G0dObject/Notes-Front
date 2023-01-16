@@ -44,7 +44,7 @@ function LoginTest({ isLogin }) {
 			>
 				<MDBTabsItem>
 					<MDBTabsLink
-						className="btn-dark text-black"
+						className="btn-dark text-black "
 						onClick={() => handleJustifyClick("tab1")}
 						active={justifyActive === "tab1"}
 					>
@@ -73,6 +73,7 @@ function LoginTest({ isLogin }) {
 						maxLength="80"
 						type="email"
 						inputRef={lemail}
+						contrast
 					/>
 					<MDBInput
 						wrapperClass="mb-4 "
@@ -81,6 +82,7 @@ function LoginTest({ isLogin }) {
 						required
 						type="password"
 						inputRef={lpassword}
+						contrast
 					/>
 
 					<div className="d-flex justify-content-between mx-4 mb-4">
@@ -90,30 +92,35 @@ function LoginTest({ isLogin }) {
 							id="flexCheckDefault"
 							label="Remember me"
 						/>
-						<a href="!#">Forgot password?</a>
+						<a className="form-label" href="!#">
+							Forgot password?
+						</a>
 					</div>
 
 					<MDBBtn
-						className="mb-4 w-100 bg-dark "
+						className="mb-4 w-100 buttoncolor"
+						color="black"
 						onClick={() => {
 							store.login(lemail.current.value, lpassword.current.value);
 						}}
 					>
 						Sign in
 					</MDBBtn>
-					<p className="text-center">
+					<p className="text-center f">
 						Not a member? <Link to="/register">Register</Link>
 					</p>
 				</MDBTabsPane>
 
 				<MDBTabsPane show={justifyActive === "tab2"}>
 					<MDBInput
+						className="color"
 						inputRef={username}
 						wrapperClass="mb-4"
 						label="Username"
 						required
 						id="form1"
 						type="text"
+						contrast
 					/>
 					<MDBInput
 						wrapperClass="mb-4"
@@ -121,6 +128,7 @@ function LoginTest({ isLogin }) {
 						inputRef={email}
 						id="form1"
 						type="email"
+						contrast
 					/>
 					<MDBInput
 						inputRef={password}
@@ -129,6 +137,7 @@ function LoginTest({ isLogin }) {
 						required
 						id="form1"
 						type="password"
+						contrast
 					/>
 
 					<div className="d-flex justify-content-center mb-4">
@@ -140,7 +149,8 @@ function LoginTest({ isLogin }) {
 					</div>
 
 					<MDBBtn
-						className="mb-4 w-100 bg-dark"
+						className="mb-4 w-100 buttoncolor"
+						color="black"
 						onClick={() => {
 							store.registration(
 								username.current.value,

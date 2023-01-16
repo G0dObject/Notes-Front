@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import NoteService from "../../services/NoteService";
 import AddNote from "./AddNote";
 import NoteWrapper from "./NoteWrapper";
+import * as db from "../../DatabaseWorker";
 
 function NoteContainer() {
 	const [notes, setNotes] = useState([]);
 
-	useEffect(() => GetData(), []);
-
-	function GetData() {
-		NoteService.get().then((response) => {
-			setNotes(response.data);
+	const GetData = async () => {
+		await db.GetAllNotes(function (response) {
+			setNotes(response);
 		});
-	}
+		let response = await NoteService.get();
+		setNotes(response.data);
+	};
 
 	return (
 		<>

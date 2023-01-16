@@ -1,8 +1,7 @@
-import { makeAutoObservable, makeObservable } from "mobx";
+import { makeAutoObservable } from "mobx";
 import AuthService from "../services/AuthService";
 import * as mobx from "mobx";
-import { Link } from "react-router-dom";
-import { render } from "@testing-library/react";
+
 export default class Store {
 	constructor() {
 		makeAutoObservable(this);

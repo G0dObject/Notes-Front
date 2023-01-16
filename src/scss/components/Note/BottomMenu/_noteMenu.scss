@@ -1,0 +1,59 @@
+.noteblock {
+	&__menu {
+		display: flex;
+		height: 20px;
+		margin-right: 10px;
+		margin-bottom: 5px;
+		background-color: transparent;
+		justify-content: right;
+		font-size: 18px;
+		*:hover {
+			cursor: pointer;
+		}
+	}
+}
+.notemenu {
+	&__list {
+		margin-right: 5%;
+		display: flex;
+
+		&__panel {
+			box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.6),
+				0 2px 6px 2px rgba(0, 0, 0, 0.302);
+
+			width: 220px;
+			height: fit-content;
+			min-height: 100px;
+			margin-right: 30px;
+			background-color: $background;
+			position: fixed;
+
+			ul {
+				display: grid;
+				top: 50%;
+
+				transform: translateY(+7%);
+				align-items: flex-start;
+			}
+			li {
+				cursor: pointer;
+				text-align: justify;
+				font-size: 1.2rem;
+				padding: 5px 5px 5px 25px;
+				font-weight: 100;
+			}
+
+			li:hover {
+				border: #444547;
+				background-color: #444547;
+			}
+			&.hide {
+				position: fixed;
+				display: none;
+			}
+			&.show {
+				display: block;
+			}
+		}
+	}
+}

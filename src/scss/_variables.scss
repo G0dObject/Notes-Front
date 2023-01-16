@@ -1,9 +1,11 @@
 $black: #232323;
-$background: #fbfffe;
+$background: #232323;
 $gray-line: #f6f6f6;
 $orange: #fe5f1e;
-$bordercolor: #e3e3e3;
-$fullborder: 2px solid $bordercolor;
+$bordercolor: rgba(227, 227, 227, 0.3);
+$fullborder: 0.5px solid $bordercolor;
 $container-width: 90%;
-
+$fontcolor: rgb(232, 234, 237);
 $duration: 0.15s;
+
+$buttoncolor: rgb(95, 98, 103);

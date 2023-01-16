@@ -1,0 +1,23 @@
+.form-label {
+	color: $fontcolor !important;
+}
+.buttoncolor {
+	background-color: $buttoncolor !important;
+	color: $fontcolor;
+}
+.buttoncolor:hover {
+	color: $fontcolor !important;
+}
+
+.nav-pills {
+	.active {
+		background-color: $buttoncolor !important;
+		color: $fontcolor !important  ;
+	}
+}
+.form-control {
+	color: rgba($color: $fontcolor, $alpha: 0.8) !important;
+}
+.form-control:focus {
+	color: $fontcolor !important;
+}
