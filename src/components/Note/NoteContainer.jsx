@@ -6,8 +6,8 @@ import * as db from "../../DatabaseWorker";
 
 function NoteContainer() {
 	const [notes, setNotes] = useState([]);
-
-	const GetData = async () => {
+	useEffect(()=>{GetData()},[])
+async function GetData ()  {
 		await db.GetAllNotes(function (response) {
 			setNotes(response);
 		});
